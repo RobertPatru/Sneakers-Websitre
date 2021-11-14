@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+/*      HIDE THE ARROWS FROM INPUT TYPE NUMBER  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+/*      HIDE THE ARROWS FROM INPUT TYPE NUMBER  */
+
 body {
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 16px;
@@ -312,4 +325,9 @@ a {
 .fa-trash {
     font-size: 20px;
     color: rgba(51, 51, 51, 0.623);
+}
+
+
+.cart-items {
+    display: none;
 }
