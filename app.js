@@ -61,6 +61,7 @@ addToCartBtn.addEventListener('click', function (){     // when add to cart butt
 
 deleteButton.addEventListener('click', function(){   // when detele button is clicked
     document.querySelector('.cart-items').style.display = 'none';  // hide the cart details
+    numar = 0;
 });
 
 minus.addEventListener('click', function(){     // when minus button is clicked another item is removed from the cart
