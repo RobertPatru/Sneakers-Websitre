@@ -15,6 +15,34 @@ const deleteButton = document.querySelector('.fa-trash');
 let firstUsed = 1;  // if the cart is empty firstUsed is true else false
 let numar;  // the number of snekers in the cart
 
+
+// LIGHT BOX EFFECT
+const lightbox = document.createElement('div'); // create a div
+lightbox.id = 'lightbox';   // give it the ligthbox id
+document.body.appendChild(lightbox); // add the div into the body
+
+mainImg.addEventListener('click', function() {
+    lightbox.classList.add('active');
+
+    const fullScreenImg = document.createElement('img');    // create another img
+    fullScreenImg.src = mainImg.src;    // the new img will be the same as the main img
+
+    while (lightbox.firstChild) {   // atata timp cand in lightbox e o imagine
+        lightbox.removeChild(lightbox.firstChild);  // sterge acea imagine
+    }
+
+    lightbox.appendChild(fullScreenImg);    // add the new img into the lightbox div
+});
+
+lightbox.addEventListener('click', function(object) {
+    if (object.target !== object.currentTarget) { // daca dam click pe ceva ce nu e lightbox 
+        return  // nu face nimic
+    }   
+    else {  // daca dai click pe lightbox atunci inchide lightboxul
+        lightbox.classList.remove('active');
+    }
+})
+
 // CHANGE THE MAIN IMAGE BASED ON THE IMAGE CLICKED
 
 document.querySelector('.img1').addEventListener('click', function(){
